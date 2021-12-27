@@ -54,8 +54,8 @@ dependencies {
 
 
     //Coroutine kotlin component
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
     // lifecycle component
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
@@ -88,11 +88,21 @@ dependencies {
     //circular image lib
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    // Retrofit & OkHttp
+    // Retrofit & OkHttp interceptor
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
+
+
+    //ROOM
+    implementation "androidx.room:room-runtime:2.4.0"
+    annotationProcessor "androidx.room:room-compiler:2.4.0"
+    kapt "androidx.room:room-compiler:2.4.0"
+    testImplementation("androidx.room:room-testing:2.4.0") // test & impl
+    implementation("androidx.room:room-ktx:2.4.0")
+
 }
-// Allow references to generated code
+// Allow references to generated code --hilt
 kapt {
     correctErrorTypes = true
 }
