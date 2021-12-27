@@ -11,7 +11,7 @@
         android:id="@+id/myText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text=""
         android:textSize="24sp"
         android:layout_margin="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
