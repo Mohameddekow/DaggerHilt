@@ -24,9 +24,16 @@ constructor(
         delay(1000) //to delay the data as the progress bar is shown //@TODO don't do this in production code there's in delaying data
 
         try {
+            val networkBlogs = blogRetrofit.getBlogs()
+            val blogs = networkMapper.mapFromEntityList(networkBlogs)
+            for (blog in blogs){
+                blogDao.insertBlog(cacheMapper.mapToEntity(blog))
+            }
+            val cachedBlog = blogDao.getBlog()
+            emit(DataState.Success(cacheMapper.mapFromEntityList(cachedBlog)))
 
-        }catch (e: Exception){
-
+        }catch(e: Exception){
+            emit(DataState.Error(e))
         }
 
     }

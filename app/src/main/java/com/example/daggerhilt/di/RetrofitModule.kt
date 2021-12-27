@@ -1,5 +1,6 @@
 package com.example.daggerhilt.di
 
+import com.example.daggerhilt.constants.Constants
 import com.example.daggerhilt.retrofit.BlogRetrofit
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -28,7 +29,7 @@ object RetrofitModule {
     @Provides
     fun providesRetrofit(gson: Gson): Retrofit.Builder{
         return Retrofit.Builder()
-            .baseUrl("https://open-api.xyz/placeholder/")
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
     }
 
