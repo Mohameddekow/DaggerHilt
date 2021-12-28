@@ -19,6 +19,8 @@ constructor(
     private val networkMapper: NetworkMapper
 ){
 
+
+
     suspend fun getBlog(): Flow<DataState<List<Blog>>> = flow {
         emit(DataState.Loading)
         delay(1000) //to delay the data as the progress bar is shown //@TODO don't do this in production code there's in delaying data
